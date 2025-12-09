@@ -3511,15 +3511,8 @@
 }
     ];
     
-    // Randomize question order each time
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
-    let shuffledQuestions = shuffle(questions.map((q,idx)=>({...q,id:idx})));
+   // Use questions in listed order – NO randomization.
+let shuffledQuestions = questions.map((q,idx)=>({...q, id: idx}));
     // Numbering for display, so always starts at 1
     function renderQuestions() {
       let s="";
